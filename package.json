@@ -1,0 +1,17 @@
+{
+    "name": "decorator-demo",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "babel es6.js > es6toes5.js",
+        "build2": "babel log.js > logtoes5.js"
+    },
+    "author": "YongMaple",
+    "license": "ISC",
+    "dependencies": {
+        "babel-plugin-transform-decorators-legacy": "^1.3.4",
+        "babel-preset-es2015": "^6.22.0",
+        "babel-preset-stage-2": "^6.22.0"
+    }
+}
