@@ -33,11 +33,3 @@ var tony = new IronMan();
 tony.check();
 tony.attack();
 tony.error();
-
-// 输出：
-// (IronMan 自检阶段) 正在执行: check() = ?
-// (IronMan 自检阶段) 成功 : check() => 检查完毕
-// (IronMan 攻击阶段) 正在执行: attack() = ?
-// (IronMan 攻击阶段) 成功 : attack() => 击倒敌人
-// (IronMan 机体报错) 正在执行: error() = ?
-// (IronMan 机体报错) 失败: error() => Something is wrong!

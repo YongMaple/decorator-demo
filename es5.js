@@ -22,7 +22,7 @@ Decorator.prototype.toString = function() {
 }
 
 // 继承自装饰器对象
-// 创建具体的装饰器，也是接收 Man 作对参数
+// 创建具体的装饰器，也是接收 Man 作为参数
 var DecorateArmour = function(man) {
     var moreDef = 100;
     man.def += moreDef;
@@ -30,7 +30,6 @@ var DecorateArmour = function(man) {
 }
 DecorateArmour.prototype = new Decorator();
 
-// 接下来我们要为每一个功能创建一个装饰者对象，重写父级方法，添加我们想要的功能。
 DecorateArmour.prototype.toString = function() {
     return this.man.toString();
 }

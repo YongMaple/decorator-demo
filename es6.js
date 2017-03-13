@@ -1,22 +1,3 @@
-@addFly(true)
-class Man {
-    constructor(def = 2, atk = 3, hp = 3) {
-        this.init(def, atk, hp)
-    }
-    @decorateArmour
-    @decorateLight
-    init(def, atk, hp) {
-        this.def = def
-        this.atk = atk
-        this.hp = hp
-    }
-    toString() {
-        return `防御力：${this.def}，攻击力：${this.atk}，血量：${this.hp}`
-    }
-}
-let tony = new Man()
-console.log(`当前状态 ===> ${tony}`);
-
 function decorateArmour(target, key, descriptor) {
     const method = descriptor.value;
     let moreDef = 100;
@@ -52,3 +33,22 @@ function addFly(canFly) {
         return target;
     }
 }
+
+@addFly(true)
+class Man {
+    constructor(def = 2, atk = 3, hp = 3) {
+        this.init(def, atk, hp)
+    }
+    @decorateArmour
+    @decorateLight
+    init(def, atk, hp) {
+        this.def = def
+        this.atk = atk
+        this.hp = hp
+    }
+    toString() {
+        return `防御力：${this.def}，攻击力：${this.atk}，血量：${this.hp}`
+    }
+}
+let tony = new Man()
+console.log(`当前状态 ===> ${tony}`);

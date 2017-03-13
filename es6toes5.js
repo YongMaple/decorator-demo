@@ -1,14 +1,33 @@
 'use strict';
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = function() {
+    function defineProperties(target, props) {
+        for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+        }
+    }
+    return function(Constructor, protoProps, staticProps) {
+        if (protoProps) defineProperties(Constructor.prototype, protoProps);
+        if (staticProps) defineProperties(Constructor, staticProps);
+        return Constructor;
+    };
+}();
 
 var _dec, _class, _desc, _value, _class2;
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
 
 function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
     var desc = {};
-    Object['ke' + 'ys'](descriptor).forEach(function (key) {
+    Object['ke' + 'ys'](descriptor).forEach(function(key) {
         desc[key] = descriptor[key];
     });
     desc.enumerable = !!desc.enumerable;
@@ -18,7 +37,7 @@ function _applyDecoratedDescriptor(target, property, decorators, descriptor, con
         desc.writable = true;
     }
 
-    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+    desc = decorators.slice().reverse().reduce(function(desc, decorator) {
         return decorator(target, property, desc) || desc;
     }, desc);
 
@@ -35,7 +54,7 @@ function _applyDecoratedDescriptor(target, property, decorators, descriptor, con
     return desc;
 }
 
-var Man = (_dec = addFly(true), _dec(_class = (_class2 = function () {
+var Man = (_dec = addFly(true), _dec(_class = (_class2 = function() {
     function Man() {
         var def = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 2;
         var atk = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 3;
@@ -70,7 +89,7 @@ function decorateArmour(target, key, descriptor) {
     var method = descriptor.value;
     var moreDef = 100;
     var ret = void 0;
-    descriptor.value = function () {
+    descriptor.value = function() {
         for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
             args[_key] = arguments[_key];
         }
@@ -86,7 +105,7 @@ function decorateLight(target, key, descriptor) {
     var method = descriptor.value;
     var moreAtk = 50;
     var ret = void 0;
-    descriptor.value = function () {
+    descriptor.value = function() {
         for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
             args[_key2] = arguments[_key2];
         }
@@ -99,11 +118,11 @@ function decorateLight(target, key, descriptor) {
 }
 
 function addFly(canFly) {
-    return function (target) {
+    return function(target) {
         target.canFly = canFly;
         var extra = canFly ? '(技能加成:飞行能力)' : '';
         var method = target.prototype.toString;
-        target.prototype.toString = function () {
+        target.prototype.toString = function() {
             for (var _len3 = arguments.length, args = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
                 args[_key3] = arguments[_key3];
             }
@@ -113,4 +132,3 @@ function addFly(canFly) {
         return target;
     };
 }
-
